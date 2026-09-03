@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int main(){
 
     int turismo;
@@ -71,17 +73,6 @@ int main(){
 
     printf("*** Finalizando digitalizacao da sua primeira carta ***\n");
 
-
-
-
-    //menssagem de aviso do programa finalizado com sucesso
-    printf("*** Programa finalizado com sucesso ***\n");
-
-
-
-
-
-
     printf("***PRIMEIRA CARTA FINALIZADA***\n");
 
     //compilador para exibição de dados.
@@ -97,7 +88,7 @@ int main(){
     printf("A densidade populacional por area da sua primeira carta e: %.2f\n", densidadepopul);
     pibpercap = (double)(pib) / populacao;
     printf(" A sua capital dividido por populcao da sua primeira carta e: %.2f\n", pibpercap);
-    superpoder = (float)(populacao) + (area) + pib + turismo + pib + pibpercap + densidadepopul;
+    superpoder = (float)(populacao) + (area) + pib + turismo;
     printf(" O superpoder da sua primeira carta e: %4.f\n", superpoder);
 
 
@@ -106,9 +97,8 @@ int main(){
 
     printf("*** Digitalizacao da primeira carta finalizada bom proveito ***\n");
 
-    //INICIALIZAÇÃO SEGUNDA CARTA
 
-    int turismo2, batalha1, batalha2;
+    int turismo2;
     float area2, pib2, superpoder2;
     unsigned long int populacao2;
     double densidadepopul2, pibpercap2;
@@ -175,17 +165,6 @@ int main(){
 
     printf("*** Finalizando digitalizacao da sua segunda carta ***\n");
 
-
-
-
-    //menssagem de aviso do programa finalizado com sucesso
-    printf("*** Programa finalizado com sucesso ***\n");
-
-
-
-
-
-
     printf("***SEGUNDACARTA FINALIZADA***\n");
 
     //compilador para exibição de dados.
@@ -201,88 +180,112 @@ int main(){
     printf("A densidade populacional por area da sua segunda carta e: %.2f\n", densidadepopul2);
     pibpercap2 = (double)(pib2) / populacao2;
     printf("A sua capital dividido por populcao da sua segunda carta e: %.2f\n", pibpercap2);
-    superpoder2 = (float)(populacao2) + (area2) + pib2 + turismo2 + pib2 + pibpercap2 + densidadepopul2;
+    superpoder2 = (float)(populacao2) + (area2) + pib2 + turismo2;
     printf("O superpoder da sua segunda carta e: %4.f\n", superpoder2);
-
-
 
 
 
     printf("*** Digitalizacao da segunda carta finalizada bom proveito ***\n");
 
+
+
     printf("*** BATALHA DE CARTAS INICIADA ***\n");
-
-    printf("*** A carta como o menor valor de poder vence. ***\n");
-
-
-    printf("Se a primeira batalha da carta 1 retornar igua a (1) a carta 1 e a vencedora.\n");
-    printf("Se a segunda batalha da carta 2 retornar igual a (0) a carta 2 e a vencadora.\n");
 
     //BATALHA DE PONTOS TURISTICOS DAS CARTAS
 
     printf("A quantidade de populacao da primeira carta e (%lu) a da segunda carta e (%lu)\n", populacao, populacao2);
-    batalha1 = populacao < populacao2;
-    printf("Resultado da quantidade de populacao carta 1 e: %d\n", batalha1);
-    batalha2 = populacao2 > populacao;
-    printf("Resultado da quantidade de populacao carta 2 e: %d\n", batalha2);
+
+    // Compilador de resultado da batalha
+
+    if ( populacao > populacao2){
+        printf("Numero da populacao carta 1 venceu\n");
+    } else {
+        printf("Numero da populacao carta 2 venceu\n");
+    };
+    
 
     //BATALHA DE POPULAÇÃO DAS CARTAS
 
     printf("A quantidade de pontos turisticos primeira carta e (%d) a da segunda carta e (%d)\n", turismo, turismo2);
-    batalha1 = turismo < turismo2;
-    printf("Resultado pontos turisticos carta 1: %d\n", batalha1);
-    batalha2 = turismo2 > turismo;
-    printf("Resultado pontos turisticos carta 2: %d\n", batalha2);
 
+    //Compilador  de resultado da batalha
+
+    if ( turismo > turismo2 ){
+        printf("Numero de pontos turisticos carta 1 venceu\n");
+    } else {
+        printf("Numero de pontos turisticos carta 2 venceu\n");
+    };
+   
     //BATALHA DA AREA DAS CARTAS
 
     printf("A quantidade de area primeira carta e (%.2f) a da segunda carta e (%.2f)\n", area, area2);
-    batalha1 = area < area2;
-    printf("Resultado quantidade de area carta 1: %d\n", batalha1);
-    batalha2 = area2 > area;
-    printf("Resultado quantidade de area carta 2: %d\n", batalha2);
+
+    //Compilador de resultado da batalha
+
+    if ( area > area2 ){
+        printf("Numero da area carta 1 venceu\n");
+    } else {
+        printf("Numero da area carta 2 venceu\n");
+    };
+    
 
     //BATALHA DO PIB DAS CARTAS
 
     printf("A quantidade de pib primeira carta e (%.2f) a da segunda carta e (%.2f)\n", pib, pib2);
-    batalha1 = pib < pib2;
-    printf("Resultado da quantidade de pib carta 1: %d\n", batalha1);
-    batalha2 = pib2 > pib;
-    printf("Resultado da quantidade de pib carta 2: %d\n", batalha2);
+
+    //Compilador de resultado da batalha
+
+    if ( pib > pib2 ){
+        printf("Numero do pib carta 1 venceu\n");
+    } else {
+        printf("Numero do pib carta 2 venceu\n");
+    };
+    
 
     //BATALHA DO PIB POR CAPITAL DAS CARTAS
 
     printf("A quantidade de pib por capital primeira carta e (%.2f) a da segunda carta e (%.2f)\n", pibpercap, pibpercap2);
-    batalha1 = pibpercap < pibpercap2;
-    printf("Resultado pib por capital carta 1: %d\n", batalha1);
-    batalha2 = pibpercap2 > pibpercap;
-    printf("Resultado pib por capital carta 2: %d\n", batalha2);
+
+    //Compilador de resultado da batalha
+
+    if ( pibpercap > pibpercap2 ){
+        printf("Numero do pib por captal carta 1 venceu\n");
+    } else {
+        printf("Numero do pib por capital carta 2 venceu\n");
+    };
+    
 
     //BATALHA DA DENSIDADE POR POPULAÇÃO DAS CARTAS
+    printf("Na batalha de densidade populacional o menor numero vence:\n");
 
     printf("A quantidade de densidade populacional primeira carta e (%.2f) a da segunda carta e (%.2f)\n", densidadepopul, densidadepopul2);
-    batalha1 = densidadepopul < densidadepopul2;
-    printf("Resultado densidade populacional carta 1: %d\n", batalha1);
-    batalha2 = densidadepopul2 > densidadepopul;
-    printf("Resultado densidade populacional carta 2: %d\n", batalha2);
 
+    //Compilador de resultado da batalha
+
+    if ( densidadepopul < densidadepopul2 ){
+        printf("Numero da densidade populacional carta 1 venceu\n");
+    } else {
+        printf("Numero da densidade populacional carta 2 venceu\n");
+    };
+    
     //BATALHA DO SUPER PODER DAS CARTAS
-
-    //COMPILADOR DE PONTOS PARA RESULTADO DA BATALHA
-
-    printf("Se a primeira batalha da carta 1 retornar igua a (1) a carta 1 e a vencedora.\n");
-    printf("Se a segunda batalha da carta 2 retornar igual a (0) a carta 2 e a vencadora.\n");
+    printf("Super Poder e o numero total da soma dos fatores das cartas:\n");
 
     printf("A quantidade de super poder da primeira carta e (%4.f) a da segunda carta e (%4.f)\n", superpoder, superpoder2);
-    batalha1 = superpoder < superpoder2;
-    printf("Resultado batalha de superpoder carta 1: %d\n", batalha1);
-    batalha2 = superpoder2 > superpoder;
-    printf("Resultado batalha de super poder carta 2: %d\n", batalha2);
 
-    printf("Resultado final carta 1 = (%d). Resultado final carta 2 = (%d).\n", batalha1, batalha2);
+    //Compilador de resultado da batalha
 
-    printf("***FIM DA BATALHA DE CARTAS***");
-    
+    if ( superpoder > superpoder2 ){
+        printf("SUPER PODER CARTA 1 VENCEU A BATALHA\n");
+    } else {
+        printf("SUPER PODER CARTA 2 VENCEU A BATALHA\n");
+    };
+
+    printf("***FIM DA BATALHA DE CARTAS***\n");
+
+
+    //menssagem de aviso do programa finalizado com sucesso
+    printf("*** PROGRAMA FINALIZADO COM SUCESSO ***\n");
     
     return 0;
 
